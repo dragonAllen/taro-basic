@@ -46,6 +46,9 @@ class Index extends Component {
         <View>
           <navigator url='/pages/echart/echart'>点击跳转图表案例</navigator>
         </View>
+        <View>
+          <navigator url='/pages/wxparse/wxparse'>点击跳转富文本解析案例</navigator>
+        </View>
       </View>
     )
   }

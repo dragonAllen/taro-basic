@@ -20,7 +20,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/echart/echart'
+      'pages/echart/echart',
+      'pages/wxparse/wxparse'
     ],
     window: {
       backgroundTextStyle: 'light',

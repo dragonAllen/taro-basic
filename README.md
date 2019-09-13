@@ -3,6 +3,9 @@
 ````
 taro
 redux
+taro-ui
+echart
+wxParse
 ````
 In the project directory, you can run:
 

@@ -1,3 +1,4 @@
+import TaroRegionPicker from '../../components/regionPicker/index'
 import { Barcode, QRCode } from 'taro-code'
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text, Navigator } from '@tarojs/components'
@@ -42,7 +43,10 @@ class Index extends Component {
 
   componentDidHide () { }
 
-
+  onGetRegion (region) {
+    // 参数region为选择的省市区
+    console.log(region);
+  }
 
   render () {
     return (
@@ -56,6 +60,7 @@ class Index extends Component {
         <Navigator url='/pages/echart/echart' className='nav'>点击跳转图表案例</Navigator>
         <Navigator url='/pages/wxparse/wxparse' className='nav'>点击跳转wxParse案例</Navigator>
         <Navigator url='/pages/richtext_markdown/richtext' className='nav'>点击跳转taro_rich_text案例</Navigator>
+        <TaroRegionPicker onGetRegion={this.onGetRegion.bind(this)} />
       </View>
     )
   }

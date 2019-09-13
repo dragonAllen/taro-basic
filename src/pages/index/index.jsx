@@ -3,6 +3,7 @@ import { Barcode, QRCode } from 'taro-code'
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import { getMockData } from '../../utils/api';
 import { add, minus, asyncAdd } from '../../actions/counter'
 
 
@@ -30,7 +31,9 @@ class Index extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      myMockData: ''
+    };
   }
 
   componentWillReceiveProps (nextProps) {
@@ -38,6 +41,10 @@ class Index extends Component {
   }
 
   componentWillUnmount () { }
+
+  componentDidMount() {
+    this.mockData();
+  }
 
   componentDidShow () { }
 
@@ -48,6 +55,19 @@ class Index extends Component {
     console.log(region);
   }
 
+  mockData = () => {
+    let that = this;
+    getMockData()
+      .then(res => {
+          that.setState({
+            myMockData: '成功获取数据:'+ res.data.name + res.data.result || []
+          });
+      })
+      .catch(err => {
+        console.error(`请求接口失败:`, err);
+      });
+  };
+
   render () {
     return (
       <View className='index'>
@@ -57,6 +77,7 @@ class Index extends Component {
         <View><Text>{this.props.counter.num}</Text></View>
         <Barcode text='hello' width={305} height={68} />
         <QRCode text='world' size={130} />
+        <View>获取数据测试======{this.state.myMockData}</View>
         <Navigator url='/pages/echart/echart' className='nav'>点击跳转图表案例</Navigator>
         <Navigator url='/pages/wxparse/wxparse' className='nav'>点击跳转wxParse案例</Navigator>
         <Navigator url='/pages/richtext_markdown/richtext' className='nav'>点击跳转taro_rich_text案例</Navigator>

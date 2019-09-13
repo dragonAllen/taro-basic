@@ -75,13 +75,13 @@ class Index extends Component {
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
         <View><Text>{this.props.counter.num}</Text></View>
-        <Barcode text='hello' width={305} height={68} />
-        <QRCode text='world' size={130} />
         <View>获取数据测试======{this.state.myMockData}</View>
         <Navigator url='/pages/echart/echart' className='nav'>点击跳转图表案例</Navigator>
         <Navigator url='/pages/wxparse/wxparse' className='nav'>点击跳转wxParse案例</Navigator>
         <Navigator url='/pages/richtext_markdown/richtext' className='nav'>点击跳转taro_rich_text案例</Navigator>
         <TaroRegionPicker onGetRegion={this.onGetRegion.bind(this)} />
+        <Barcode text='hello' width={750} height={100} />
+        <QRCode text='world' size={130} />
       </View>
     )
   }

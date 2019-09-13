@@ -6,7 +6,9 @@ redux
 taro-ui
 echart
 wxParse
+taro_rich_text
 taro-code
+utilscoreJS
 ````
 In the project directory, you can run:
 

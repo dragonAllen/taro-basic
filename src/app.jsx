@@ -21,7 +21,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/echart/echart',
-      'pages/wxparse/wxparse'
+      'pages/wxparse/wxparse',
+      'pages/richtext_markdown/richtext'
     ],
     window: {
       backgroundTextStyle: 'light',

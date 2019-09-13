@@ -1,9 +1,9 @@
+import { Barcode, QRCode } from 'taro-code'
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-import { Barcode, QRCode } from 'taro-code'
 
 import './index.scss'
 
@@ -27,6 +27,11 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
@@ -37,6 +42,8 @@ class Index extends Component {
 
   componentDidHide () { }
 
+
+
   render () {
     return (
       <View className='index'>
@@ -46,8 +53,9 @@ class Index extends Component {
         <View><Text>{this.props.counter.num}</Text></View>
         <Barcode text='hello' width={305} height={68} />
         <QRCode text='world' size={130} />
-        <navigator url='/pages/echart/echart' className='nav'>点击跳转图表案例</navigator>
-        <navigator url='/pages/wxparse/wxparse' className='nav'>点击跳转富文本解析案例</navigator>
+        <Navigator url='/pages/echart/echart' className='nav'>点击跳转图表案例</Navigator>
+        <Navigator url='/pages/wxparse/wxparse' className='nav'>点击跳转wxParse案例</Navigator>
+        <Navigator url='/pages/richtext_markdown/richtext' className='nav'>点击跳转taro_rich_text案例</Navigator>
       </View>
     )
   }

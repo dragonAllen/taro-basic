@@ -4,8 +4,10 @@ const config = {
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,
-    '750': 1,
-    '828': 1.81 / 2
+    // 10px 编译成 20rpx
+    '750': 1 / 2,
+    '828': 1.81 / 2,
+    '375': 1
   },
   sourceRoot: 'src',
   outputRoot: 'dist',

@@ -6,6 +6,7 @@ redux
 taro-ui
 echart
 wxParse
+taro-code
 ````
 In the project directory, you can run:
 

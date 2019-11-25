@@ -1,7 +1,4 @@
-# my custom framework basic on taro
-
-参考自taro官网/社区及相关github
-
+# 参考自taro官网/社区及相关github：
 ````
 taro
 redux
